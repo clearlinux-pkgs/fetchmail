@@ -1,0 +1,5 @@
+Configure miss: res_search in libc
+Configure miss: crypt
+Configure miss: procmail
+Configure miss: sendmail
+Configure miss: maildrop
