@@ -6,7 +6,7 @@
 #
 Name     : fetchmail
 Version  : 7.0.0.alpha6
-Release  : 1
+Release  : 2
 URL      : https://versaweb.dl.sourceforge.net/project/fetchmail/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
 Source0  : https://versaweb.dl.sourceforge.net/project/fetchmail/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
 Source99 : https://versaweb.dl.sourceforge.net/project/fetchmail/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz.asc
@@ -17,9 +17,11 @@ Requires: fetchmail-bin = %{version}-%{release}
 Requires: fetchmail-license = %{version}-%{release}
 Requires: fetchmail-locales = %{version}-%{release}
 Requires: fetchmail-man = %{version}-%{release}
+Requires: procmail
 BuildRequires : bison
 BuildRequires : flex
 BuildRequires : openssl-dev
+BuildRequires : procmail
 Patch1: 0001-Support-building-without-SSLv3.patch
 
 %description
@@ -74,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549605935
+export SOURCE_DATE_EPOCH=1549607622
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -86,7 +88,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1549605935
+export SOURCE_DATE_EPOCH=1549607622
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fetchmail
 cp COPYING %{buildroot}/usr/share/package-licenses/fetchmail/COPYING
