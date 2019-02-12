@@ -7,9 +7,9 @@
 Name     : fetchmail
 Version  : 7.0.0.alpha6
 Release  : 2
-URL      : https://versaweb.dl.sourceforge.net/project/fetchmail/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
-Source0  : https://versaweb.dl.sourceforge.net/project/fetchmail/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
-Source99 : https://versaweb.dl.sourceforge.net/project/fetchmail/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz.asc
+URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
+Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
+Source99 : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
