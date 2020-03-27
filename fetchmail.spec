@@ -6,7 +6,7 @@
 #
 Name     : fetchmail
 Version  : 7.0.0.alpha6
-Release  : 2
+Release  : 3
 URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
 Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
 Source99 : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz.asc
