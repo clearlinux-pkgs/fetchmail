@@ -1,4 +1,13 @@
+Configure miss: sys/itimer.h usability
+Configure miss: sys/itimer.h presence
+Configure miss: sys/itimer.h
+Configure miss: net/socket.h usability
+Configure miss: net/socket.h presence
+Configure miss: net/socket.h
+Configure miss: strchr in -lcposix
+Configure miss: stty
 Configure miss: res_search in libc
-Configure miss: crypt
+Configure miss: union wait
 Configure miss: sendmail
 Configure miss: maildrop
+Configure miss: whether SSLv3_client_method is declared

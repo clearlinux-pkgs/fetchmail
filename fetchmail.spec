@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xE412B156EFF3855A (mandree@FreeBSD.org)
 #
 Name     : fetchmail
-Version  : 7.0.0.alpha6
-Release  : 3
-URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
-Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz
-Source99 : https://sourceforge.net/projects/fetchmail/files/branch_6.3/fetchmail-7.0.0-alpha6.tar.xz.asc
+Version  : 6.4.3
+Release  : 4
+URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.3.tar.xz
+Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.3.tar.xz
+Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.3.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -21,8 +21,9 @@ Requires: procmail
 BuildRequires : bison
 BuildRequires : flex
 BuildRequires : openssl-dev
+BuildRequires : pkgconfig(libcrypto)
+BuildRequires : pkgconfig(libssl)
 BuildRequires : procmail
-Patch1: 0001-Support-building-without-SSLv3.patch
 
 %description
 Fetchmail is a free, full-featured, robust, and well-documented remote
@@ -37,7 +38,6 @@ Comes with an interactive GUI configurator suitable for end-users.
 Summary: bin components for the fetchmail package.
 Group: Binaries
 Requires: fetchmail-license = %{version}-%{release}
-Requires: fetchmail-man = %{version}-%{release}
 
 %description bin
 bin components for the fetchmail package.
@@ -68,30 +68,36 @@ man components for the fetchmail package.
 
 
 %prep
-%setup -q -n fetchmail-7.0.0-alpha6
-%patch1 -p1
+%setup -q -n fetchmail-6.4.3
+cd %{_builddir}/fetchmail-6.4.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1549607622
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1586825054
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1549607622
+export SOURCE_DATE_EPOCH=1586825054
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fetchmail
-cp COPYING %{buildroot}/usr/share/package-licenses/fetchmail/COPYING
+cp %{_builddir}/fetchmail-6.4.3/COPYING %{buildroot}/usr/share/package-licenses/fetchmail/96d8f76071f8618c2e59133bb8f08422cb8b4886
+cp %{_builddir}/fetchmail-6.4.3/m4-local/ac-archive-license.txt %{buildroot}/usr/share/package-licenses/fetchmail/8534c1a6b8958dc54d9478b5195976bc3fb98f6a
 %make_install
 %find_lang fetchmail
 ## install_append content
@@ -108,7 +114,8 @@ rm -rf %{buildroot}/usr/bin/fetchmailconf
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/fetchmail/COPYING
+/usr/share/package-licenses/fetchmail/8534c1a6b8958dc54d9478b5195976bc3fb98f6a
+/usr/share/package-licenses/fetchmail/96d8f76071f8618c2e59133bb8f08422cb8b4886
 
 %files man
 %defattr(0644,root,root,0755)
