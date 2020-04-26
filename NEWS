@@ -65,6 +65,13 @@ removed from a 6.5.0 or newer release.)
 
 --------------------------------------------------------------------------------
 
+fetchmail-6.4.4 (released 2020-04-26, 27530 LoC):
+
+## UPDATED TRANSLATIONS - WITH THANKS TO THE TRANSLATOR:
+* ja:    Takeshi Hamasaki [Japanese]
+
+--------------------------------------------------------------------------------
+
 fetchmail-6.4.3 (released 2020-04-05, 27530 LoC):
 
 ## BUGFIXES:
@@ -97,7 +104,7 @@ fetchmail-6.4.3 (released 2020-04-05, 27530 LoC):
   fetchmail never declared a missing getenv() symbol (it was testing with 
   #ifdef).  Remove the backup declaration. getenv is mandated by SUSv2 anyways.
 
-## UPDATED TRANSLATION - WITH THANKS TO THE TRANSLATORS:
+## UPDATED TRANSLATIONS - WITH THANKS TO THE TRANSLATORS:
 * sq:    Besnik Bleta [Albanian]
 * zh_CN: Boyuan Yang [Chinese (simplified)]
 * pl:    Jakub Bogusz [Polish]
