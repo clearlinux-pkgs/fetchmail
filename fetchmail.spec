@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xE412B156EFF3855A (mandree@FreeBSD.org)
 #
 Name     : fetchmail
-Version  : 6.4.6
-Release  : 7
-URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.6.tar.xz
-Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.6.tar.xz
-Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.6.tar.xz.asc
+Version  : 6.4.8
+Release  : 8
+URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.8.tar.xz
+Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.8.tar.xz
+Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.8.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -68,15 +68,15 @@ man components for the fetchmail package.
 
 
 %prep
-%setup -q -n fetchmail-6.4.6
-cd %{_builddir}/fetchmail-6.4.6
+%setup -q -n fetchmail-6.4.8
+cd %{_builddir}/fetchmail-6.4.8
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1590777111
+export SOURCE_DATE_EPOCH=1592237917
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -93,11 +93,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1590777111
+export SOURCE_DATE_EPOCH=1592237917
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fetchmail
-cp %{_builddir}/fetchmail-6.4.6/COPYING %{buildroot}/usr/share/package-licenses/fetchmail/96d8f76071f8618c2e59133bb8f08422cb8b4886
-cp %{_builddir}/fetchmail-6.4.6/m4-local/ac-archive-license.txt %{buildroot}/usr/share/package-licenses/fetchmail/8534c1a6b8958dc54d9478b5195976bc3fb98f6a
+cp %{_builddir}/fetchmail-6.4.8/COPYING %{buildroot}/usr/share/package-licenses/fetchmail/96d8f76071f8618c2e59133bb8f08422cb8b4886
+cp %{_builddir}/fetchmail-6.4.8/m4-local/ac-archive-license.txt %{buildroot}/usr/share/package-licenses/fetchmail/8534c1a6b8958dc54d9478b5195976bc3fb98f6a
 %make_install
 %find_lang fetchmail
 ## install_append content
