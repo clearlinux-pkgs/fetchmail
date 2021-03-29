@@ -82,6 +82,28 @@ removed from a 6.5.0 or newer release.)
   server to test against. Use GSSAPI.
 
 --------------------------------------------------------------------------------
+fetchmail-6.4.18 (not yet released):
+
+# REGRESSION FIX:
+* fetchmailconf: fetchmail 6.4.16 added --sslcertfile to the configuration dump,
+  but fetchmailconf support was incomplete in Git 7349f124 and it could not
+  parse sslcertfile, thus the user settings editor came up empty with console
+  errors printed.  Fix configuration parser in fetchmailconf.
+
+# ROBUSTNESS FIXES:
+* fetchmailconf: do not require fetchmail for -V. do not require Tk (Tkinter)
+  for -d option. This is to fail more gracefully on incomplete installs.
+* TLS code: remove OPENSSL_NO_DEPRECATED macros to avoid portability issues
+  with OpenSSL v3 - these are for development purposes, not production.
+* TLS futureproofing: use SSL_use_PrivateKey_file instead of 
+  SSL_use_RSAPrivateKey_file, the latter will be deprecated with OpenSSL v3,
+  and the user's key file might be something else than RSA.
+
+# TRANSLATION UPDATE:
+  This fine person has contributed an updated translation:
+* fi:    Lauri Nurmi [Finnish]
+
+--------------------------------------------------------------------------------
 fetchmail-6.4.17 (released 2021-03-07, 29998 LoC):
 
 # BUG FIXES
@@ -94,9 +116,8 @@ fetchmail-6.4.17 (released 2021-03-07, 29998 LoC):
   a TLS-wrapped port.
 * fetchmailconf: --version (-V) now prints the Python version in use.
 
-# TRANSLATION UPDATES
-  These fine people have contributed updated translations for fetchmail,
-  in no particular order:
+# TRANSLATION UPDATE:
+  This fine person has contributed an updated translation:
 * ja:    Takeshi Hamasaki [Japanese]
 
 --------------------------------------------------------------------------------
