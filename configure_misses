@@ -2,7 +2,6 @@ Configure miss: maildrop
 Configure miss: net/socket.h
 Configure miss: net/socket.h presence
 Configure miss: net/socket.h usability
-Configure miss: res_search in libc
 Configure miss: sendmail
 Configure miss: strchr in -lcposix
 Configure miss: stty
