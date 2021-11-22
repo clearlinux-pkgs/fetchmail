@@ -90,6 +90,43 @@ removed from a 6.5.0 or newer release.)
   have required another loop through the translators.
 
 --------------------------------------------------------------------------------
+fetchmail-6.4.24 (released 2021-11-20, 30218 LoC):
+
+# OPENSSL AND LICENSING NOTE:
+> see fetchmail-6.4.22 below, and the file COPYING.
+
+  Note that distribution of packages linked with LibreSSL is not feasible
+  due to a missing GPLv2 CLAUSE 2(b) exception.
+
+# COMPATIBILITY:
+* Bison 3.8 dropped yytoknum altogether, breaking compilation due to a
+  warning workaround. Remove the cast of yytoknum to void.  This may cause
+  a compiler warning to reappear with older Bison versions.
+* OpenSSL 1.0.2: Workaround for systems that keep the expired DST Root CA X3 
+  certificate in its trust store because OpenSSL by default prefers the 
+  untrusted certificate and fails.  Fetchmail now sets the 
+  X509_V_FLAG_TRUSTED_FIRST flag (on OpenSSL 1.0.2 only).
+  This is workaround #2 from the OpenSSL Blog.  For details, see both:
+  https://www.openssl.org/blog/blog/2021/09/13/LetsEncryptRootCertExpire/
+  https://letsencrypt.org/docs/dst-root-ca-x3-expiration-september-2021/
+
+  NOTE: OpenSSL 1.0.2 is end of life, it is assumed that the OpenSSL library
+  is kept up to date by a distributor or via OpenSSL support contract.
+  Where this is not the case, please upgrade to a supported OpenSSL version.
+
+# DOCUMENTATION:
+* The manual page was revised after re-checking with mandoc -Tlint, aspell,
+  igor. Some more revisions were made for clarity.
+
+# TRANSLATIONS: language translations were updated by these fine people:
+* sv:    Göran Uddeborg [Swedish]
+* pl:    Jakub Bogusz [Polish]
+* fr:    Frédéric Marchal [French]
+* cs:    Petr Pisar [Czech]
+* eo:    Keith Bowes [Esperanto]
+* ja:    Takeshi Hamasaki [Japanese]
+
+--------------------------------------------------------------------------------
 fetchmail-6.4.23 (released 2021-10-31, 30206 LoC):
 
 # USABILITY:
