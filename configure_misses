@@ -10,4 +10,5 @@ Configure miss: sys/itimer.h presence
 Configure miss: sys/itimer.h usability
 Configure miss: sys_siglist declaration in signal.h or unistd.h
 Configure miss: union wait
+Configure miss: whether LIBRESSL_VERSION_NUMBER is declared
 Configure miss: whether SSLv3_client_method is declared
