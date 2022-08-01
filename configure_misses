@@ -2,6 +2,8 @@ Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: library containing yywrap
 Configure miss: maildrop
 Configure miss: net/socket.h
+Configure miss: rst2html5
+Configure miss: rst2html5.py
 Configure miss: sendmail
 Configure miss: strchr in -lcposix
 Configure miss: stty

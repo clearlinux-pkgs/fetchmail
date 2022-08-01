@@ -64,6 +64,9 @@ removed from a 6.5.0 or newer release.)
   fetchmail versions.
 * Nonstandard protocol extensions (such as SDPS/*ENV) may be removed from future 
   fetchmail versions.
+* Future fetchmail releases (even minor ones) may change undocumented parts of 
+  the .netrc parser in incompatible ways to enhance compatibility with typical
+  ftp(1) .netrc parsers.
 
 # KNOWN BUGS AND WORKAROUNDS
 * Fetchmail does not handle messages without Message-ID header well
@@ -91,6 +94,24 @@ removed from a 6.5.0 or newer release.)
 * When compiled against wolfSSL, some diagnostics and messages of fetchmail are 
   hardcoded to read "OpenSSL"; this was found only after the call for 
   translations had been sent out already.
+
+--------------------------------------------------------------------------------
+fetchmail-6.4.32 (released 2022-07-30, 31696 LoC):
+
+# FIXES:
+* Use configure to find rst2html, some systems install it only with .py suffix,
+  others only without, and some install both.
+* Update README.maintainer
+
+# TRANSLATIONS: language translations were updated by these fine people:
+(in alphabetical order of language codes so as not to prefer people):
+* cs:    Petr Pisar [Czech]
+* es:    Cristian Othón Martínez Vera [Spanish]
+* ja:    Takeshi Hamasaki [Japanese]
+* pl:    Jakub Bogusz [Polish]
+* ro:    Remus-Gabriel Chelu [Romanian]
+* sq:    Besnik Bleta [Albanian]
+* sv:    Göran Uddeborg [Swedish]
 
 --------------------------------------------------------------------------------
 fetchmail-6.4.31 (released 2022-07-16, 31694 LoC):
