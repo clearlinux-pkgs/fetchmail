@@ -6,7 +6,7 @@
 #
 Name     : fetchmail
 Version  : 6.4.33
-Release  : 32
+Release  : 33
 URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.33.tar.xz
 Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.33.tar.xz
 Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.33.tar.xz.asc
