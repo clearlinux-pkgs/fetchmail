@@ -67,6 +67,8 @@ removed from a 6.5.0 or newer release.)
 * Future fetchmail releases (even minor ones) may change undocumented parts of 
   the .netrc parser in incompatible ways to enhance compatibility with typical
   ftp(1) .netrc parsers.
+* Apparently OPIE is dying. I only have this support on FreeBSD, and
+  FreeBSD 14 (slated for release in 2023) is about to remove it.
 
 # KNOWN BUGS AND WORKAROUNDS
 * Fetchmail does not handle messages without Message-ID header well
@@ -94,6 +96,24 @@ removed from a 6.5.0 or newer release.)
 * When compiled against wolfSSL, some diagnostics and messages of fetchmail are 
   hardcoded to read "OpenSSL"; this was found only after the call for 
   translations had been sent out already.
+* FreeBSD's OPIE implementation cannot be found when using a C++ compiler.
+  This should not affect the normal build, which uses a C compiler.
+
+--------------------------------------------------------------------------------
+fetchmail-6.4.34 (released 2022-10-15, 31701 LoC):
+
+# CRITICAL BUG FIXES:
+* When an SMTP receiver refuses delivery, a message would be deleted from
+  the mail store in spite of a softbounce option that is enabled.
+  Bug report, analysis and patch by Horváth Zsolt. Gitlab, fixes #50.
+
+# BUILD NOTE:
+* If you are reusing config.cache from prior builds, this may cause
+  issues with finding Python or some libraries.  In case of trouble,
+  remove config.cache and retry.
+
+# TRANSLATIONS: language translations were updated by this fine person:
+* sr:    Мирослав Николић (Miroslav Nikolić) [Serbian]
 
 --------------------------------------------------------------------------------
 fetchmail-6.4.33 (released 2022-08-27, 31696 LoC):

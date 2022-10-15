@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xE412B156EFF3855A (mandree@FreeBSD.org)
 #
 Name     : fetchmail
-Version  : 6.4.33
-Release  : 33
-URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.33.tar.xz
-Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.33.tar.xz
-Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.33.tar.xz.asc
+Version  : 6.4.34
+Release  : 34
+URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.34.tar.xz
+Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.34.tar.xz
+Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.34.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -66,15 +66,15 @@ man components for the fetchmail package.
 
 
 %prep
-%setup -q -n fetchmail-6.4.33
-cd %{_builddir}/fetchmail-6.4.33
+%setup -q -n fetchmail-6.4.34
+cd %{_builddir}/fetchmail-6.4.34
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661784200
+export SOURCE_DATE_EPOCH=1665846665
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -91,7 +91,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1661784200
+export SOURCE_DATE_EPOCH=1665846665
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fetchmail
 cp %{_builddir}/fetchmail-%{version}/m4-local/ac-archive-license.txt %{buildroot}/usr/share/package-licenses/fetchmail/8534c1a6b8958dc54d9478b5195976bc3fb98f6a || :
