@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xE412B156EFF3855A (mandree@FreeBSD.org)
 #
 Name     : fetchmail
-Version  : 6.4.35
-Release  : 35
-URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.35.tar.xz
-Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.35.tar.xz
-Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.35.tar.xz.asc
+Version  : 6.4.36
+Release  : 36
+URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.36.tar.xz
+Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.36.tar.xz
+Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.4/fetchmail-6.4.36.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -69,15 +69,15 @@ man components for the fetchmail package.
 
 
 %prep
-%setup -q -n fetchmail-6.4.35
-cd %{_builddir}/fetchmail-6.4.35
+%setup -q -n fetchmail-6.4.36
+cd %{_builddir}/fetchmail-6.4.36
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1672846526
+export SOURCE_DATE_EPOCH=1674940790
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
@@ -94,7 +94,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1672846526
+export SOURCE_DATE_EPOCH=1674940790
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fetchmail
 cp %{_builddir}/fetchmail-%{version}/m4-local/ac-archive-license.txt %{buildroot}/usr/share/package-licenses/fetchmail/8534c1a6b8958dc54d9478b5195976bc3fb98f6a || :

@@ -100,11 +100,25 @@ removed from a 6.5.0 or newer release.)
   This should not affect the normal build, which uses a C compiler.
 
 --------------------------------------------------------------------------------
+fetchmail-6.4.36 (released 2023-01-28, 31710 LoC):
+
+# TRANSLATIONS: language translations were updated by these fine people:
+(in alphabetical order of language codes):
+* cs:    Petr Pisar [Czech]
+* es:    Cristian Othón Martínez Vera [Spanish]
+* fr:    Frédéric Marchal [French]
+* ja:    Takeshi Hamasaki [Japanese]
+* pl:    Jakub Bogusz [Polish]
+* ro:    Remus-Gabriel Chelu [Romanian]
+* sq:    Besnik Bleta [Albanian]
+* sv:    Göran Uddeborg [Swedish]
+
+--------------------------------------------------------------------------------
 fetchmail-6.4.35 (released 2023-01-04, 31707 LoC):
 
 # BREAKING CHANGES:
 * Fetchmail now warns about OpenSSL before 1.1.1s or 3.0.7,
-  and rejects wolfSSL older than 5.5.0.
+  and rejects wolfSSL older than 5.5.1.
 
 # TRANSLATIONS: language translations were updated by these fine people:
 (in reverse alphabetical order of language codes so as not to prefer people):
