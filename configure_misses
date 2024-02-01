@@ -1,15 +1,30 @@
 Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: htmldoc
 Configure miss: htmldoc
 Configure miss: library containing yywrap
+Configure miss: library containing yywrap
+Configure miss: maildrop
 Configure miss: maildrop
 Configure miss: net/socket.h
+Configure miss: net/socket.h
+Configure miss: rst2html5
 Configure miss: rst2html5
 Configure miss: rst2html5.py
+Configure miss: rst2html5.py
+Configure miss: sendmail
 Configure miss: sendmail
 Configure miss: strchr in -lcposix
+Configure miss: strchr in -lcposix
+Configure miss: stty
 Configure miss: stty
 Configure miss: sys/itimer.h
+Configure miss: sys/itimer.h
+Configure miss: sys_siglist declaration in signal.h or unistd.h
 Configure miss: sys_siglist declaration in signal.h or unistd.h
 Configure miss: union wait
+Configure miss: union wait
 Configure miss: whether LIBRESSL_VERSION_NUMBER is declared
+Configure miss: whether LIBRESSL_VERSION_NUMBER is declared
+Configure miss: whether SSLv3_client_method is declared
 Configure miss: whether SSLv3_client_method is declared
