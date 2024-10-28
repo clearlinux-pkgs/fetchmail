@@ -98,9 +98,30 @@ removed from a 6.5.0 or newer release.)
   translations had been sent out already.
 * FreeBSD's OPIE implementation cannot be found when using a C++ compiler.
   This should not affect the normal build, which uses a C compiler.
+* Using ccache may trigger "implicit fallthrough" warnings because
+  the comments that, for instance, GCC understands, are removed by ccache's
+  separate preprocessing.  Fixing this portably requires C++17.
+* Fetchmail's RFC-2047 encoder (used for localized Subject: lines of locally-
+  originated e-mail messages) is simplistic and violates the RFC-2047
+  requirement that multibyte characters must not be split across
+  encoded-words.
 
 --------------------------------------------------------------------------------
-fetchmail-6.4.38 (not yet released):
+fetchmail-6.4.39 (released 2024-07-20, 31729 LoC):
+
+# BUG FIXES:
+* When a server offers STARTTLS although the connection is already wrapped
+  in TLS, fetchmail would issue a bogus "WARNING: server offered STARTTLS but 
+  sslproto '' given." (or STLS for POP3).  In situations where we wrap the
+  connection in TLS, suppress the warning. Reported by Mike Pope.
+
+* If fetchmail was running localized, generate an error e-mail message locally,
+  and if the selected translation would require the Subject: line to wrap
+  inside an RFC-2047 encoded word (=?UTF-8?Q?...?=), the wrapped encoded-word
+  was not indented, thus not marked as a continuation line.
+
+--------------------------------------------------------------------------------
+fetchmail-6.4.38 (released 2024-01-31, 31720 LoC):
 
 # BREAKING CHANGES:
 * Tighten OpenSSL and wolfSSL version requirements again. See README.SSL.
