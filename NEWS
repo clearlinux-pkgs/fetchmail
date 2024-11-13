@@ -53,9 +53,9 @@ removed from a 6.6.0 or newer release.)
 * Fetchmailconf is deprecated and will be removed from a future release.
 * Fetchmail does not guarantee compatibility with EOL OpenSSL versions. Support
   for end-of-life OpenSSL versions may be removed even from patchlevel releases.
-* Nonstandard authentication schemes (such as RPA) may be removed from future
-  fetchmail versions.
-* Nonstandard protocol extensions (such as SDPS/*ENV) may be removed from future 
+* Nonstandard or by today's standards insufficiently secure authentication
+  schemes (such as OPIE, RPA) may be removed from future fetchmail versions.
+* Nonstandard protocol extensions (such as SDPS/*ENV) may be removed from future
   fetchmail versions.
 * --auth ssh may be removed from future fetchmail versions. Use --auth implicit.
 * Future fetchmail releases (even minor ones) may change undocumented parts of 
@@ -99,6 +99,34 @@ removed from a 6.6.0 or newer release.)
   originated e-mail messages) is simplistic and violates the RFC-2047
   requirement that multibyte characters must not be split across
   encoded-words.
+
+-------------------------------------------------------------------------------
+fetchmail-6.5.1 (not yet released):
+
+## BUG AND PORTABILITY FIXES:
+* Drop two wolfSSL compile-time checks that were for older 6.4 or for future
+  7.0 releases and broke compilation with wolfSSL 5.7.4. 
+  Fixes https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282413#c4
+* Use %p instead of non-portable %#p for one wolfSSL-related diagnostic message
+  (FreeBSD defines %#p to be %p, on many other platforms it's undefined 
+  behavior).
+* Add regex_helper.c to list of files that contain translatable strings,
+  which contains two strings we missed to translate.
+
+## CHANGES:
+* Simplify EVP_MD_fetch API detection ("like OpenSSL 3" vs. "like OpenSSL 1") 
+  for version switch and base it on the claimed OpenSSL version of the crypto 
+  SSL, which works for LibreSSL (claims OpenSSL 2) and wolfSSL alike.
+
+## TRANSLATIONS: fetchmail's messages were translated by these fine people:
+* sq:    Besnik Bleta [Albanian]
+* es:    Cristian Othón Martínez Vera [Spanish]
+* ro:    Remus-Gabriel Chelu [Romanian]
+* fr:    Frédéric Marchal [French]
+* pl:    Jakub Bogusz [Polish]
+* sv:    Göran Uddeborg [Swedish]
+* ja:    Takeshi Hamasaki [Japanese]
+* eo:    Keith Bowes [Esperanto]
 
 -------------------------------------------------------------------------------
 fetchmail-6.5.0 (released 2024-10-29, 31200 LoC):
