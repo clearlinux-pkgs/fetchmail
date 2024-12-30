@@ -101,7 +101,17 @@ removed from a 6.6.0 or newer release.)
   encoded-words.
 
 -------------------------------------------------------------------------------
-fetchmail-6.5.1 (not yet released):
+fetchmail-6.5.2 (released 2024-12-30, 31200 LoC):
+
+## TRANSLATIONS: fetchmail's translations were updated, courtesy of:
+* cs:    Petr Pisar [Czech]
+* sr:    Мирослав Николић (Miroslav Nikolić) [Serbian]
+
+## CHANGES:
+* Minor documentation consistency fixes (versions, dates).
+
+-------------------------------------------------------------------------------
+fetchmail-6.5.1 (released 2024-11-13, 31200 LoC):
 
 ## BUG AND PORTABILITY FIXES:
 * Drop two wolfSSL compile-time checks that were for older 6.4 or for future
