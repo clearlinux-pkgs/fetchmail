@@ -2,6 +2,10 @@ Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: htmldoc
 Configure miss: htmldoc
+Configure miss: res_search in -lresolv
+Configure miss: res_search in -lresolv
+Configure miss: res_search in libc
+Configure miss: res_search in libc
 Configure miss: rst2html5
 Configure miss: rst2html5
 Configure miss: rst2html5.py
