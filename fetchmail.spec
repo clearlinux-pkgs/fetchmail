@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xE412B156EFF3855A (mandree@FreeBSD.org)
 #
 Name     : fetchmail
-Version  : 6.5.3
-Release  : 44
-URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.5/fetchmail-6.5.3.tar.xz
-Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.5/fetchmail-6.5.3.tar.xz
-Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.5/fetchmail-6.5.3.tar.xz.asc
+Version  : 6.5.4
+Release  : 45
+URL      : https://sourceforge.net/projects/fetchmail/files/branch_6.5/fetchmail-6.5.4.tar.xz
+Source0  : https://sourceforge.net/projects/fetchmail/files/branch_6.5/fetchmail-6.5.4.tar.xz
+Source1  : https://sourceforge.net/projects/fetchmail/files/branch_6.5/fetchmail-6.5.4.tar.xz.asc
 Source2  : E412B156EFF3855A.pkey
 Summary  : No detailed summary available
 Group    : Development/Tools
@@ -80,10 +80,10 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) E412B156EFF3855A' gpg.status
-%setup -q -n fetchmail-6.5.3
-cd %{_builddir}/fetchmail-6.5.3
+%setup -q -n fetchmail-6.5.4
+cd %{_builddir}/fetchmail-6.5.4
 pushd ..
-cp -a fetchmail-6.5.3 buildavx2
+cp -a fetchmail-6.5.4 buildavx2
 popd
 
 %build
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1749655678
+export SOURCE_DATE_EPOCH=1750255181
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -139,7 +139,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1749655678
+export SOURCE_DATE_EPOCH=1750255181
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/fetchmail
 cp %{_builddir}/fetchmail-%{version}/m4-local/ac-archive-license.txt %{buildroot}/usr/share/package-licenses/fetchmail/8534c1a6b8958dc54d9478b5195976bc3fb98f6a || :

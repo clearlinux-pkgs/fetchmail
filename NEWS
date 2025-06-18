@@ -101,6 +101,19 @@ removed from a 6.6.0 or newer release.)
   encoded-words.
 
 -------------------------------------------------------------------------------
+fetchmail-6.5.4 (released 2025-06-17, 31208 LoC):
+
+## BUGFIXES:
+* socket: avoid crash when writing to a socket without SSL/TLS fails.
+  Reported by Andrea Venturoli via mailing list, fixes #71.
+* wolfSSL support: avoid fetchmail.c compilation failure in certain
+  configurations of wolfSSL (for instance, on FreeBSD's wolfssl-5.8.0_1
+  package), OpenSSL_version enables a newer 1.1.x compat API that passes its
+  argument to a wolfSSL API, with OPENSSL_DIR and OPENSSL_ENGINES_DIR, causing
+  related compiler failures.
+  See <https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=287435>.
+
+-------------------------------------------------------------------------------
 fetchmail-6.5.3 (released 2025-06-10, 31204 LoC):
 
 ## BUGFIXES:
